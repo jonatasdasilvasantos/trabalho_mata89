@@ -1,0 +1,20 @@
+{
+  "name": "UniTransp",
+  "version": "1.0.0",
+  "description": "Portal da transparência universitária.",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "nodemon",
+    "dev": "nodemon",
+    "pro": "node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
