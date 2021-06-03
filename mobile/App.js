@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     height: "81.95%",
     borderRadius: 24,
     marginHorizontal: -195,
-    backgroundColor: "#DCDFE2"
+    backgroundColor: "#35BCA4"
   },
   cardPrincipal: {
     width: "65.07%",
