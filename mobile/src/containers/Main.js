@@ -31,23 +31,21 @@ function Main() {
             style={{
               ...styles.cardText,
               fontSize: 32,
-              fontWeight: 'bold',
-              fontFamily: 'Ubuntu_700Bold',
+              fontFamily: 'Poppins_700Bold',
             }}>
             Receitas
           </Text>
           <Text
             style={{
               ...styles.cardText,
-              fontFamily: 'Ubuntu_700Bold',
+              fontFamily: 'OpenSans_600SemiBold',
               fontSize: 14,
               opacity: 0.8,
-              fontWeight: '600',
             }}>
             A receita da Universidade Federal da Bahia
           </Text>
           <Text
-            style={{ ...styles.cardText, fontSize: 27, fontWeight: 'bold' }}>
+            style={{ ...styles.cardText, fontSize: 25, fontFamily: 'OpenSans_800ExtraBold' }}>
             R$ 32.000.00,00
           </Text>
         </LinearGradient>
@@ -64,8 +62,8 @@ function Main() {
       </Text>
 
       <View style={styles.buttons}>
-        <Button transparent titulo="Cadastrar" />
-        <Button titulo="Log In" onPress={changePage('Dashboard')} />
+        <Button transparent titulo="Cadastrar" onPress={changePage('Cadastrar')}/>
+        <Button titulo="Log In" onPress={changePage('Login')} />
       </View>
     </Template>
   )
@@ -99,16 +97,16 @@ const styles = StyleSheet.create({
   card: {
     width: '37.31%',
     height: '81.95%',
-    borderRadius: 24,
+    borderRadius: 40,
     marginHorizontal: -195,
     backgroundColor: '#35BCA4',
   },
   cardPrincipal: {
     width: '65.07%',
     height: '100%',
-    paddingHorizontal: 24,
-    paddingVertical: 32,
-    borderRadius: 24,
+    paddingHorizontal: '6%',
+    paddingVertical: '8%',
+    borderRadius: 32,
     textAlign: 'center',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -131,8 +129,9 @@ const styles = StyleSheet.create({
   detalhes: {
     color: '#979797',
     textAlign: 'center',
-    marginHorizontal: 64,
-    marginVertical: 20,
+    marginHorizontal: '20%',
+    marginVertical: '4%',
+    fontFamily: 'Ubuntu_400Regular'
   },
   buttons: {
     width: '100%',
@@ -143,7 +142,6 @@ const styles = StyleSheet.create({
   },
   buttonLogIn: {
     color: '#FFFFFF',
-    fontWeight: 'bold',
     fontSize: 16,
     lineHeight: 18,
     backgroundColor: '#925BFF',
@@ -152,6 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     shadowColor: '#925BFF',
     elevation: 5,
+    fontFamily: 'Poppins_900Black',
   },
   buttonCadastrar: {
     color: '#925BFF',
