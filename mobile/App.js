@@ -1,7 +1,5 @@
-import React from "react";
-import { View, Dimensions, StyleSheet, ScrollView } from "react-native";
-import AppLoading from "expo-app-loading";
-import { StatusBar } from "expo-status-bar";
+import React from 'react'
+import AppLoading from 'expo-app-loading'
 
 // Fonts externas
 import {
@@ -14,10 +12,10 @@ import {
   Ubuntu_500Medium_Italic,
   Ubuntu_700Bold,
   Ubuntu_700Bold_Italic,
-} from "@expo-google-fonts/ubuntu";
+} from '@expo-google-fonts/ubuntu'
 
 // Routes
-import Routes from "./src/containers";
+import Routes from './src/containers'
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -29,38 +27,11 @@ export default function App() {
     Ubuntu_500Medium_Italic,
     Ubuntu_700Bold,
     Ubuntu_700Bold_Italic,
-  });
+  })
 
   if (!fontsLoaded) {
-    return <AppLoading />;
+    return <AppLoading />
   } else {
-    return (
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <ScrollView
-          contentContainerStyle={styles.routesContainer}
-          style={styles.routes}
-        >
-          <Routes />
-        </ScrollView>
-      </View>
-    );
+    return <Routes />
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    height: Dimensions.get("screen").height,
-    width: Dimensions.get("screen").width,
-    backgroundColor: "#fff",
-    marginTop: 32,
-    padding: 0,
-    flex: 1,
-  },
-  routesContainer: {
-    flexGrow: 1,
-  },
-  routes: {
-    flex: 1,
-  },
-});

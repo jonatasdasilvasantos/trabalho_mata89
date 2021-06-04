@@ -65,7 +65,7 @@ function Main() {
 
       <View style={styles.buttons}>
         <Button transparent titulo="Cadastrar" />
-        <Button titulo="Log In" onPress={changePage('Home')} />
+        <Button titulo="Log In" onPress={changePage('Dashboard')} />
       </View>
     </Template>
   )
