@@ -14,21 +14,21 @@ function Button({ transparent, titulo, onPress }) {
 const styles = StyleSheet.create({
   button1: {
     backgroundColor: '#925BFF',
-    paddingVertical: 24,
-    paddingHorizontal: 32,
+    paddingVertical: '6%',
+    paddingHorizontal: '10%',
     borderRadius: 24,
     shadowColor: '#925BFF',
-    elevation: 5,
+    elevation: 6,
   },
   button2: {
-    backgroundColor: '#FFFFFF',
-    paddingVertical: 24,
-    paddingHorizontal: 32,
+    backgroundColor: 'transparent',
+    paddingVertical: '6%',
+    paddingRight: '8%',
     borderRadius: 24,
-    elevation: 5,
+    //elevation: 5,
   },
-  text1: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16, lineHeight: 18 },
-  text2: { color: '#925BFF', fontWeight: 'bold', lineHeight: 18, fontSize: 16 },
+  text1: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16, lineHeight: 18, fontFamily: 'Ubuntu_700Bold' },
+  text2: { color: '#925BFF', fontWeight: 'bold', lineHeight: 16, fontSize: 16, fontFamily: 'Poppins_900Black' },
 })
 
 export default Button
