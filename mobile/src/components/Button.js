@@ -25,10 +25,21 @@ const styles = StyleSheet.create({
     paddingVertical: '6%',
     paddingRight: '8%',
     borderRadius: 24,
-    //elevation: 5,
   },
-  text1: { color: '#FFFFFF', fontWeight: 'bold', fontSize: 16, lineHeight: 18, fontFamily: 'Ubuntu_700Bold' },
-  text2: { color: '#925BFF', fontWeight: 'bold', lineHeight: 16, fontSize: 16, fontFamily: 'Poppins_900Black' },
+  text1: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    fontSize: 16,
+    lineHeight: 18,
+    fontFamily: 'Ubuntu_700Bold',
+  },
+  text2: {
+    color: '#925BFF',
+    fontWeight: 'bold',
+    lineHeight: 16,
+    fontSize: 16,
+    fontFamily: 'Poppins_900Black',
+  },
 })
 
 export default Button
