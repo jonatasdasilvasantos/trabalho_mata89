@@ -32,7 +32,7 @@ function Login() {
             </View>
             <View style={styles.buttons}>
                 <Button transparent titulo="Esqueceu sua senha?" onPress={changePage('Password')} />
-                <Button titulo="Entrar" onPress={changePage('Main')} />
+                <Button titulo="Entrar" onPress={changePage('Dashboard')} />
             </View>
         </Template>
     )
