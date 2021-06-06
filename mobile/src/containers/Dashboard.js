@@ -4,10 +4,9 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 /* Icons */
-//import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
 
-import { Button, Template } from '../components'
+import { Button, Template, Avatar, CardMenuButton } from '../components'
 
 function Dashboard() {
   const navigation = useNavigation()
@@ -16,137 +15,38 @@ function Dashboard() {
   return (
     <Template>
       <Text style={styles.title}>Dashboard</Text>
-      <View
-        style={{
-          marginTop: 15,
-          marginLeft: 30,
-          flexDirection: 'row',
-          alignSelf: 'flex-start',
-          justifyContent: 'flex-start',
-        }}>
-        <Image source={require('../../assets/Avatar.png')} />
-        <Text
-          style={{
-            color: '#584E7E',
-            fontSize: 24,
-            fontFamily: 'Ubuntu_700Bold',
-            marginLeft: 15,
-            alignSelf: 'center',
-          }}>
-          Jônatas da Silva
-        </Text>
-      </View>
+      <Avatar
+        source={require('../../assets/Avatar.png')}
+        name="Jônatas da Silva"
+      />
 
       <View style={styles.block}>
-        <LinearGradient colors={['#925BFF', '#732DFF']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Receitas
-          </Text>
-          <MaterialIcons
-            name="menu-book"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
-          />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 32.000.000,00
-          </Text>
-        </LinearGradient>
-        <LinearGradient colors={['#1E1F22', '#1E1F22']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Receitas
-          </Text>
-          <MaterialIcons
-            name="menu-book"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
-          />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 54.000.000,00
-          </Text>
-        </LinearGradient>
+        <CardMenuButton
+          colors={['#925BFF', '#732DFF']}
+          title="Receitas"
+          value="R$ 32.000.000,00"
+          icon="menu-book"
+        />
+        <CardMenuButton
+          colors={['#1E1F22', '#1E1F22']}
+          title="Despesas"
+          value="R$ 54.000.000,00"
+          icon="menu-book"
+        />
       </View>
       <View style={styles.block}>
-        <LinearGradient colors={['#F5912F', '#F47318']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Parcerias
-          </Text>
-          <MaterialIcons
-            name="menu-book"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
-          />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 1.000.000,00
-          </Text>
-        </LinearGradient>
-        <LinearGradient colors={['#35BCA4', '#09816C']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Projetos
-          </Text>
-          <MaterialIcons
-            name="menu-book"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
-          />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 32.000.000,00
-          </Text>
-        </LinearGradient>
-        {/* <View style={styles.despesas}></View>
-        <View style={styles.parcerias}></View>
-        <View style={styles.projetos}></View> */}
+        <CardMenuButton
+          colors={['#F5912F', '#F47318']}
+          title="Parcerias"
+          value="R$ 1.000.000,00"
+          icon="menu-book"
+        />
+        <CardMenuButton
+          colors={['#35BCA4', '#09816C']}
+          title="Projetos"
+          value="R$ 32.000.000,00"
+          icon="menu-book"
+        />
       </View>
       <View style={styles.bar}>
         <View style={styles.disable}>
