@@ -3,7 +3,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet, Text } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-function CardMenuButton({ title, colors, value, icon }) {
+function CardMenuButton({ title, colors, value, icon, onPress }) {
   return (
     <LinearGradient colors={colors} style={styles.container}>
       <Text style={styles.title}>{title}</Text>
@@ -18,6 +18,7 @@ function CardMenuButton({ title, colors, value, icon }) {
         name="location-enter"
         size={32}
         color="#f4f4f4"
+        onPress={onPress}
         style={{ alignSelf: 'center' }}
       />
     </LinearGradient>

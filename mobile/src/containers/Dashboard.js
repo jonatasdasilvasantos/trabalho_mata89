@@ -25,6 +25,7 @@ function Dashboard() {
             colors={['#925BFF', '#732DFF']}
             title="Receitas"
             value="R$ 32.000.000,00"
+            onPress={changePage('Receitas')}
             icon="book-open-page-variant"
           />
         </View>
@@ -33,6 +34,7 @@ function Dashboard() {
             colors={['#1E1F22', '#1E1F22']}
             title="Despesas"
             value="R$ 54.000.000,00"
+            onPress={changePage('Despesas')}
             icon="clipboard-pulse"
           />
         </View>
@@ -43,6 +45,7 @@ function Dashboard() {
             colors={['#F5912F', '#F47318']}
             title="Parcerias"
             value="R$ 1.000.000,00"
+            onPress={changePage('Parcerias')}
             icon="handshake"
           />
         </View>
@@ -51,26 +54,26 @@ function Dashboard() {
             colors={['#35BCA4', '#09816C']}
             title="Projetos"
             value="R$ 32.000.000,00"
+            onPress={changePage('Projetos')}
             icon="head-lightbulb"
           />
         </View>
       </View>
-      { /* Menu */}
+      {/* Menu */}
       <View style={styles.bar}>
         <View style={styles.disable}>
           <Pressable
             onPress={changePage('Receitas')}
             style={{
               alignItems: 'center',
-             }}
-          >
+            }}>
             <MaterialCommunityIcons
               name="book-open-page-variant"
               size={24}
               color="#fefefe"
               style={{ opacity: 0.7 }}
             />
-              <Text style={styles.route}>Receitas</Text>
+            <Text style={styles.route}>Receitas</Text>
           </Pressable>
         </View>
         <View style={styles.disable}>
@@ -78,8 +81,7 @@ function Dashboard() {
             onPress={changePage('Receitas')}
             style={{
               alignItems: 'center',
-            }}
-          >
+            }}>
             <MaterialCommunityIcons
               name="clipboard-pulse"
               size={24}
@@ -87,7 +89,7 @@ function Dashboard() {
               onPress={changePage('Despesas')}
               style={{ opacity: 0.7 }}
             />
-              <Text style={styles.route}>Despesas</Text>
+            <Text style={styles.route}>Despesas</Text>
           </Pressable>
         </View>
         <View style={styles.selected}>
@@ -98,8 +100,7 @@ function Dashboard() {
             onPress={changePage('Receitas')}
             style={{
               alignItems: 'center',
-            }}
-          >
+            }}>
             <MaterialCommunityIcons
               name="handshake"
               size={24}
@@ -115,8 +116,7 @@ function Dashboard() {
             onPress={changePage('Receitas')}
             style={{
               alignItems: 'center',
-            }}
-          >
+            }}>
             <MaterialCommunityIcons
               name="head-lightbulb"
               size={24}
