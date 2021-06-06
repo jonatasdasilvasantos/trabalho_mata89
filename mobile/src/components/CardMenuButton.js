@@ -14,6 +14,12 @@ function CardMenuButton({ title, colors, value, icon }) {
         style={{ alignSelf: 'center' }}
       />
       <Text style={styles.value}>{value}</Text>
+      <MaterialCommunityIcons
+        name="location-enter"
+        size={32}
+        color="#f4f4f4"
+        style={{ alignSelf: 'center' }}
+      />
     </LinearGradient>
   )
 }
@@ -21,10 +27,10 @@ function CardMenuButton({ title, colors, value, icon }) {
 const styles = StyleSheet.create({
   container: {
     width: 170,
-    height: 210,
+    height: 240,
     padding: 15,
     borderRadius: 24,
-    marginTop: 32,
+    marginTop: 24,
     marginHorizontal: 5,
   },
   title: {
