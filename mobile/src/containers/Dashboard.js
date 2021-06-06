@@ -1,10 +1,9 @@
 import React from 'react'
-import { LinearGradient } from 'expo-linear-gradient'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 /* Icons */
-import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import { Button, Template, Avatar, CardMenuButton } from '../components'
 
@@ -15,182 +14,87 @@ function Dashboard() {
   return (
     <Template>
       <Text style={styles.title}>Dashboard</Text>
-      <View
-        style={{
-          marginTop: 15,
-          marginLeft: 30,
-          flexDirection: 'row',
-          alignSelf: 'flex-start',
-          justifyContent: 'flex-start',
-        }}>
-        <Image source={require('../../assets/Avatar.png')} />
-        <Text
-          style={{
-            color: '#584E7E',
-            fontSize: 24,
-            fontFamily: 'Ubuntu_400Regular',
-            marginLeft: 15,
-            alignSelf: 'center',
-          }}>
-          Jônatas da Silva
-        </Text>
-      </View>
+      <Avatar
+        source={require('../../assets/Avatar.png')}
+        name="Jônatas da Silva"
+      />
 
       <View style={styles.block}>
-        <LinearGradient colors={['#925BFF', '#732DFF']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Receitas
-          </Text>
-          <MaterialCommunityIcons
-            name="book-open-page-variant"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
+        <View style={{ paddingBottom: 15 }}>
+          <CardMenuButton
+            colors={['#925BFF', '#732DFF']}
+            title="Receitas"
+            value="R$ 32.000.000,00"
+            icon="book-open-page-variant"
           />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 32.000.000,00
-          </Text>
-        </LinearGradient>
-        <LinearGradient colors={['#1E1F22', '#1E1F22']} style={ styles.receitas }>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Despesas
-          </Text>
-          <MaterialCommunityIcons
-            name="clipboard-pulse"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
+        </View>
+        <View style={{ paddingTop: 20 }}>
+          <CardMenuButton
+            colors={['#1E1F22', '#1E1F22']}
+            title="Despesas"
+            value="R$ 54.000.000,00"
+            icon="clipboard-pulse"
           />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 54.000.000,00
-          </Text>
-        </LinearGradient>
+        </View>
       </View>
-      <View style={styles.block}>
-        <LinearGradient colors={['#F5912F', '#F47318']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Parcerias
-          </Text>
-          <MaterialCommunityIcons
-            name="handshake"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
+      <View style={styles.block2}>
+        <View style={{ paddingBottom: 15 }}>
+          <CardMenuButton
+            colors={['#F5912F', '#F47318']}
+            title="Parcerias"
+            value="R$ 1.000.000,00"
+            icon="handshake"
           />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 1.000.000,00
-          </Text>
-        </LinearGradient>
-        <LinearGradient colors={['#35BCA4', '#09816C']} style={styles.receitas}>
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 24,
-              fontFamily: 'Ubuntu_700Bold',
-              alignSelf: 'flex-start',
-            }}>
-            Projetos
-          </Text>
-          <MaterialCommunityIcons
-            name="head-lightbulb"
-            size={128}
-            color="#f4f4f4"
-            style={{ alignSelf: 'center' }}
+        </View>
+        <View style={{ paddingTop: 20 }}>
+          <CardMenuButton
+            colors={['#35BCA4', '#09816C']}
+            title="Projetos"
+            value="R$ 32.000.000,00"
+            icon="head-lightbulb"
           />
-          <Text
-            style={{
-              color: '#fff',
-              fontSize: 16,
-              fontFamily: 'ChakraPetch_700Bold',
-              alignSelf: 'center',
-            }}>
-            R$ 32.000.000,00
-          </Text>
-        </LinearGradient>
-        {/* <View style={styles.despesas}></View>
-        <View style={styles.parcerias}></View>
-        <View style={styles.projetos}></View> */}
+        </View>
       </View>
       <View style={styles.bar}>
-        <View style={styles.disable}>
+        <Pressable style={styles.disable} onPress={changePage('Receitas')}>
           <MaterialCommunityIcons
             name="book-open-page-variant"
             size={24}
             color="#fefefe"
-            onPress={changePage('Receitas')}
             style={{ opacity: 0.7 }}
           />
           <Text style={styles.route}>Receitas</Text>
-        </View>
-        <View style={styles.disable}>
+        </Pressable>
+        <Pressable style={styles.disable} onPress={changePage('Despesas')}>
           <MaterialCommunityIcons
             name="clipboard-pulse"
             size={24}
             color="#fefefe"
-            onPress={changePage('Despesas')}
             style={{ opacity: 0.7 }}
           />
           <Text style={styles.route}>Despesas</Text>
-        </View>
+        </Pressable>
         <View style={styles.selected}>
           <MaterialCommunityIcons name="view-grid" size={24} color="#fefefe" />
         </View>
-        <View style={styles.disable}>
+        <Pressable style={styles.disable} onPress={changePage('Parcerias')}>
           <MaterialCommunityIcons
             name="handshake"
             size={24}
             color="#fefefe"
-            onPress={changePage('Parcerias')}
             style={{ opacity: 0.7 }}
           />
           <Text style={styles.route}>Parcerias</Text>
-        </View>
-        <View style={styles.disable}>
+        </Pressable>
+        <Pressable style={styles.disable} onPress={changePage('Projetos')}>
           <MaterialCommunityIcons
             name="head-lightbulb"
             size={24}
             color="#fefefe"
-            onPress={changePage('Projetos')}
             style={{ opacity: 0.7 }}
           />
           <Text style={styles.route}>Projetos</Text>
-        </View>
+        </Pressable>
       </View>
     </Template>
   )
@@ -246,6 +150,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   block: {
+    marginBottom: -10,
+    flexDirection: 'row',
+  },
+  block2: {
+    marginTop: -25,
+    marginBottom: -10,
     flexDirection: 'row',
   },
 })
