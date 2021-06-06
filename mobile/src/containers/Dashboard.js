@@ -55,46 +55,78 @@ function Dashboard() {
           />
         </View>
       </View>
+      { /* Menu */}
       <View style={styles.bar}>
-        <Pressable style={styles.disable} onPress={changePage('Receitas')}>
-          <MaterialCommunityIcons
-            name="book-open-page-variant"
-            size={24}
-            color="#fefefe"
-            style={{ opacity: 0.7 }}
-          />
-          <Text style={styles.route}>Receitas</Text>
-        </Pressable>
-        <Pressable style={styles.disable} onPress={changePage('Despesas')}>
-          <MaterialCommunityIcons
-            name="clipboard-pulse"
-            size={24}
-            color="#fefefe"
-            style={{ opacity: 0.7 }}
-          />
-          <Text style={styles.route}>Despesas</Text>
-        </Pressable>
-        <View style={styles.selected}>
-          <MaterialCommunityIcons name="view-grid" size={24} color="#fefefe" />
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Receitas')}
+            style={{
+              alignItems: 'center',
+             }}
+          >
+            <MaterialCommunityIcons
+              name="book-open-page-variant"
+              size={24}
+              color="#fefefe"
+              style={{ opacity: 0.7 }}
+            />
+              <Text style={styles.route}>Receitas</Text>
+          </Pressable>
         </View>
-        <Pressable style={styles.disable} onPress={changePage('Parcerias')}>
-          <MaterialCommunityIcons
-            name="handshake"
-            size={24}
-            color="#fefefe"
-            style={{ opacity: 0.7 }}
-          />
-          <Text style={styles.route}>Parcerias</Text>
-        </Pressable>
-        <Pressable style={styles.disable} onPress={changePage('Projetos')}>
-          <MaterialCommunityIcons
-            name="head-lightbulb"
-            size={24}
-            color="#fefefe"
-            style={{ opacity: 0.7 }}
-          />
-          <Text style={styles.route}>Projetos</Text>
-        </Pressable>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Receitas')}
+            style={{
+              alignItems: 'center',
+            }}
+          >
+            <MaterialCommunityIcons
+              name="clipboard-pulse"
+              size={24}
+              color="#fefefe"
+              onPress={changePage('Despesas')}
+              style={{ opacity: 0.7 }}
+            />
+              <Text style={styles.route}>Despesas</Text>
+          </Pressable>
+        </View>
+        <View style={styles.selected}>
+          <MaterialCommunityIcons name="view-grid" size={28} color="#fefefe" />
+        </View>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Receitas')}
+            style={{
+              alignItems: 'center',
+            }}
+          >
+            <MaterialCommunityIcons
+              name="handshake"
+              size={24}
+              color="#fefefe"
+              onPress={changePage('Parcerias')}
+              style={{ opacity: 0.7 }}
+            />
+            <Text style={styles.route}>Parcerias</Text>
+          </Pressable>
+        </View>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Receitas')}
+            style={{
+              alignItems: 'center',
+            }}
+          >
+            <MaterialCommunityIcons
+              name="head-lightbulb"
+              size={24}
+              color="#fefefe"
+              onPress={changePage('Projetos')}
+              style={{ opacity: 0.7 }}
+            />
+            <Text style={styles.route}>Projetos</Text>
+          </Pressable>
+        </View>
       </View>
     </Template>
   )
@@ -120,6 +152,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     backgroundColor: '#925BFF',
     position: 'absolute',
+    marginBottom: '-3%',
   },
   selected: {
     borderWidth: 3,
@@ -135,6 +168,7 @@ const styles = StyleSheet.create({
   disable: {
     //opacity: 0.6,
     alignItems: 'center',
+    marginTop: '-3%',
     paddingHorizontal: '6.4%',
   },
   route: {
