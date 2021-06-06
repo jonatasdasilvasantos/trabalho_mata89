@@ -20,7 +20,7 @@ function Dashboard() {
       />
 
       <View style={styles.block}>
-        <View style={{ paddingBottom: 15 }}>
+        <View style={{ paddingBottom: '3.15%' }}>
           <CardMenuButton
             colors={['#925BFF', '#732DFF']}
             title="Receitas"
@@ -28,7 +28,7 @@ function Dashboard() {
             icon="book-open-page-variant"
           />
         </View>
-        <View style={{ paddingTop: 20 }}>
+        <View style={{ paddingTop: '6.30%' }}>
           <CardMenuButton
             colors={['#1E1F22', '#1E1F22']}
             title="Despesas"
@@ -38,7 +38,7 @@ function Dashboard() {
         </View>
       </View>
       <View style={styles.block2}>
-        <View style={{ paddingBottom: 15 }}>
+        <View style={{ paddingBottom: '3.15%' }}>
           <CardMenuButton
             colors={['#F5912F', '#F47318']}
             title="Parcerias"
@@ -46,7 +46,7 @@ function Dashboard() {
             icon="handshake"
           />
         </View>
-        <View style={{ paddingTop: 20 }}>
+        <View style={{ paddingTop: '6.30%' }}>
           <CardMenuButton
             colors={['#35BCA4', '#09816C']}
             title="Projetos"
@@ -154,8 +154,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   block2: {
-    marginTop: -25,
-    marginBottom: -10,
+    marginTop: '-7.30%',
+    marginBottom: '-7.30%',
     flexDirection: 'row',
   },
 })
