@@ -29,7 +29,7 @@ function Dashboard() {
           style={{
             color: '#584E7E',
             fontSize: 24,
-            fontFamily: 'Ubuntu_700Bold',
+            fontFamily: 'Ubuntu_400Regular',
             marginLeft: 15,
             alignSelf: 'center',
           }}>
@@ -48,8 +48,8 @@ function Dashboard() {
             }}>
             Receitas
           </Text>
-          <MaterialIcons
-            name="menu-book"
+          <MaterialCommunityIcons
+            name="book-open-page-variant"
             size={128}
             color="#f4f4f4"
             style={{ alignSelf: 'center' }}
@@ -64,7 +64,7 @@ function Dashboard() {
             R$ 32.000.000,00
           </Text>
         </LinearGradient>
-        <LinearGradient colors={['#1E1F22', '#1E1F22']} style={styles.receitas}>
+        <LinearGradient colors={['#1E1F22', '#1E1F22']} style={ styles.receitas }>
           <Text
             style={{
               color: '#fff',
@@ -72,10 +72,10 @@ function Dashboard() {
               fontFamily: 'Ubuntu_700Bold',
               alignSelf: 'flex-start',
             }}>
-            Receitas
+            Despesas
           </Text>
-          <MaterialIcons
-            name="menu-book"
+          <MaterialCommunityIcons
+            name="clipboard-pulse"
             size={128}
             color="#f4f4f4"
             style={{ alignSelf: 'center' }}
@@ -102,8 +102,8 @@ function Dashboard() {
             }}>
             Parcerias
           </Text>
-          <MaterialIcons
-            name="menu-book"
+          <MaterialCommunityIcons
+            name="handshake"
             size={128}
             color="#f4f4f4"
             style={{ alignSelf: 'center' }}
@@ -128,8 +128,8 @@ function Dashboard() {
             }}>
             Projetos
           </Text>
-          <MaterialIcons
-            name="menu-book"
+          <MaterialCommunityIcons
+            name="head-lightbulb"
             size={128}
             color="#f4f4f4"
             style={{ alignSelf: 'center' }}
@@ -150,8 +150,8 @@ function Dashboard() {
       </View>
       <View style={styles.bar}>
         <View style={styles.disable}>
-          <MaterialIcons
-            name="menu-book"
+          <MaterialCommunityIcons
+            name="book-open-page-variant"
             size={24}
             color="#fefefe"
             onPress={changePage('Receitas')}
@@ -160,8 +160,8 @@ function Dashboard() {
           <Text style={styles.route}>Receitas</Text>
         </View>
         <View style={styles.disable}>
-          <MaterialIcons
-            name="assignment"
+          <MaterialCommunityIcons
+            name="clipboard-pulse"
             size={24}
             color="#fefefe"
             onPress={changePage('Despesas')}
@@ -170,7 +170,7 @@ function Dashboard() {
           <Text style={styles.route}>Despesas</Text>
         </View>
         <View style={styles.selected}>
-          <MaterialIcons name="grid-view" size={24} color="#fefefe" />
+          <MaterialCommunityIcons name="view-grid" size={24} color="#fefefe" />
         </View>
         <View style={styles.disable}>
           <MaterialCommunityIcons
@@ -184,7 +184,7 @@ function Dashboard() {
         </View>
         <View style={styles.disable}>
           <MaterialCommunityIcons
-            name="medal"
+            name="head-lightbulb"
             size={24}
             color="#fefefe"
             onPress={changePage('Projetos')}
