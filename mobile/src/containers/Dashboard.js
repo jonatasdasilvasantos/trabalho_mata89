@@ -4,10 +4,9 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 /* Icons */
-//import { Ionicons } from '@expo/vector-icons';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
 
-import { Button, Template } from '../components'
+import { Button, Template, Avatar, CardMenuButton } from '../components'
 
 function Dashboard() {
   const navigation = useNavigation()
@@ -220,7 +219,7 @@ const styles = StyleSheet.create({
   },
   selected: {
     borderWidth: 3,
-    borderRadius: 18,
+    borderRadius: 20,
     borderColor: '#fff',
     alignSelf: 'center',
     justifyContent: 'center',
