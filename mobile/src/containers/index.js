@@ -3,15 +3,15 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 // Screens
-import Main from './Main';
-import Home from './Home';
-import Login from './Login';
-import Cadastrar from './Cadastrar';
-import Dashboard from './Dashboard';
-import Parcerias from './Parcerias';
-import Projetos from './Projetos';
-import Despesas from './Despesas';
-import Receitas from './Receitas';
+import Main from './Main'
+import Login from './Login'
+import Cadastrar from './Cadastrar'
+import Dashboard from './Dashboard'
+import Parcerias from './Parcerias'
+import Projetos from './Projetos'
+import Despesas from './Despesas'
+import Receitas from './Receitas'
+import RecoverPassword from './RecoverPassword'
 
 const Stack = createStackNavigator()
 
@@ -27,7 +27,7 @@ function Routes() {
         <Stack.Screen name="Despesas" component={Despesas} />
         <Stack.Screen name="Parcerias" component={Parcerias} />
         <Stack.Screen name="Projetos" component={Projetos} />
-        {/* <Stack.Screen name="Home" component={Home} /> */}
+        <Stack.Screen name="RecoverPassword" component={RecoverPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   )

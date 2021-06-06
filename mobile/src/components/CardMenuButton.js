@@ -1,13 +1,13 @@
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 import { StyleSheet, Text } from 'react-native'
-import { MaterialIcons } from '@expo/vector-icons'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 function CardMenuButton({ title, colors, value, icon }) {
   return (
     <LinearGradient colors={colors} style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <MaterialIcons
+      <MaterialCommunityIcons
         name={icon}
         size={128}
         color="#f4f4f4"
@@ -20,7 +20,9 @@ function CardMenuButton({ title, colors, value, icon }) {
 
 const styles = StyleSheet.create({
   container: {
-    padding: '4%',
+    width: 170,
+    height: 210,
+    padding: 15,
     borderRadius: 24,
     marginTop: 32,
     marginHorizontal: 5,
