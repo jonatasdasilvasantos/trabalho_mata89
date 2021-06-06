@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   selected: {
     borderWidth: 3,
-    borderRadius: 18,
+    borderRadius: 20,
     borderColor: '#fff',
     alignSelf: 'center',
     justifyContent: 'center',
