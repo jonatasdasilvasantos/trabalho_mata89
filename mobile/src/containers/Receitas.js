@@ -28,12 +28,12 @@ function Receitas() {
         <LinearGradient onPress={changePage('Receitas')} colors={['#323438', '#1E1F22']} style={{ ...styles.card, marginTop: '3%', }} >
           <Text style={styles.cardText}>Parcerias Universitárias</Text>
           <Text style={styles.cardDesc}>Oraçamento previsto 2021</Text>
-          <Text style={styles.cardMoney}>R$ 32.000.000,00</Text>
+          <Text style={styles.cardMoney}>R$ 1.000.000,00</Text>
         </LinearGradient>
         <LinearGradient onPress={changePage('Receitas')} colors={['#F3A150', '#E5711F']} style={{ ...styles.card, marginTop: '3%', }} >
           <Text style={styles.cardText}>Projetos Acadêmicos</Text>
           <Text style={styles.cardDesc}>Oraçamento para 2021</Text>
-          <Text style={styles.cardMoney}>R$ 32.000.000,00</Text>
+          <Text style={styles.cardMoney}>R$ 8.000.000,00</Text>
         </LinearGradient>
       </View>
         {/*<View style={{ paddingTop: '6.30%' }}>
