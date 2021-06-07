@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-function Header({ name, push, notifications }) {
+function Header({ name, push }) {
   return (
     <View style={styles.container}>
       <View style={styles.containerTitle}>
@@ -14,13 +14,6 @@ function Header({ name, push, notifications }) {
           size={32}
           color="#f4f4f4"
           onPress={push}
-          style={{ alignSelf: 'center' }}
-        />
-        <MaterialCommunityIcons
-          name="bell"
-          size={32}
-          color="#f4f4f4"
-          onPress={notifications}
           style={{ alignSelf: 'center' }}
         />
       </View>

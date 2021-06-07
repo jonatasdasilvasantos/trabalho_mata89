@@ -78,7 +78,7 @@ function Dashboard() {
         </View>
         <View style={styles.disable}>
           <Pressable
-            onPress={changePage('Receitas')}
+            onPress={changePage('Despesas')}
             style={{
               alignItems: 'center',
             }}>
@@ -86,7 +86,6 @@ function Dashboard() {
               name="clipboard-pulse"
               size={24}
               color="#fefefe"
-              onPress={changePage('Despesas')}
               style={{ opacity: 0.7 }}
             />
             <Text style={styles.route}>Despesas</Text>
@@ -97,7 +96,7 @@ function Dashboard() {
         </View>
         <View style={styles.disable}>
           <Pressable
-            onPress={changePage('Receitas')}
+            onPress={changePage('Parcerias')}
             style={{
               alignItems: 'center',
             }}>
@@ -105,7 +104,6 @@ function Dashboard() {
               name="handshake"
               size={24}
               color="#fefefe"
-              onPress={changePage('Parcerias')}
               style={{ opacity: 0.7 }}
             />
             <Text style={styles.route}>Parcerias</Text>
@@ -113,7 +111,7 @@ function Dashboard() {
         </View>
         <View style={styles.disable}>
           <Pressable
-            onPress={changePage('Receitas')}
+            onPress={changePage('Projetos')}
             style={{
               alignItems: 'center',
             }}>
@@ -121,7 +119,6 @@ function Dashboard() {
               name="head-lightbulb"
               size={24}
               color="#fefefe"
-              onPress={changePage('Projetos')}
               style={{ opacity: 0.7 }}
             />
             <Text style={styles.route}>Projetos</Text>
