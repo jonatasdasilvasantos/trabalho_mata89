@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 
   nameStyle: {
     color: '#584E7E',
-    fontSize: 24,
+    fontSize: 16,
     fontFamily: 'Ubuntu_700Bold',
     marginLeft: 15,
     alignSelf: 'center',
