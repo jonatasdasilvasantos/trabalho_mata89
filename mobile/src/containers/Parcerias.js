@@ -83,7 +83,7 @@ function Parcerias() {
         </View>
         <View style={styles.disable}>
           <Pressable
-            onPress={changePage('Receitas')}
+            onPress={changePage('Projetos')}
             style={{
               alignItems: 'center',
             }}>
