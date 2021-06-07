@@ -1,6 +1,5 @@
 import React from 'react'
-import { LinearGradient } from 'expo-linear-gradient'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 
 import { Button, Template, Avatar, Header } from '../components'
