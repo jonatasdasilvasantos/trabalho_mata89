@@ -19,6 +19,68 @@ function Despesas() {
         name="Jônatas da Silva"
       />
 
+      {/* Despesas por enquanto */}
+      <View
+        style={{
+          marginTop: 20,
+          height: 39,
+          width: 330,
+          backgroundColor: '#A893FF',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          borderRadius: 6,
+        }}>
+        <Text
+          style={{ fontFamily: 'Ubuntu_700Bold', color: '#fff', fontSize: 16 }}>
+          Destino
+        </Text>
+        <Text
+          style={{ fontFamily: 'Ubuntu_700Bold', color: '#fff', fontSize: 16 }}>
+          Valor
+        </Text>
+      </View>
+      <View
+        style={{
+          width: 315,
+          height: 420,
+          backgroundColor: '#6746ED',
+          borderBottomRightRadius: 28,
+          borderBottomLeftRadius: 28,
+        }}>
+        {[0, 1, 2, 3, 4, 5, 6].map((itens) => (
+          <View
+            style={{
+              width: 315,
+              height: 50,
+              backgroundColor: '#6746ED',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-around',
+              borderBottomWidth: 0.8,
+              borderBottomColor: '#A893FF',
+            }}
+            key={itens}>
+            <Text
+              style={{
+                fontFamily: 'Ubuntu_700Bold',
+                color: '#fff',
+                fontSize: 16,
+              }}>
+              Energia eletrica
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Ubuntu_700Bold',
+                color: '#fff',
+                fontSize: 16,
+              }}>
+              R$ 35.000,00
+            </Text>
+          </View>
+        ))}
+      </View>
+
       {/* Menu */}
       <View style={styles.bar}>
         <View style={styles.disable}>
