@@ -97,7 +97,7 @@ function Dashboard() {
         </View>
         <View style={styles.disable}>
           <Pressable
-            onPress={changePage('Receitas')}
+            onPress={changePage('Parcerias')}
             style={{
               alignItems: 'center',
             }}>
