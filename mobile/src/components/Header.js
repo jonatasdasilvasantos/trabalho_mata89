@@ -16,13 +16,13 @@ function Header({ name, push, notifications }) {
           onPress={push}
           style={{ alignSelf: 'center' }}
         />
-        <MaterialCommunityIcons
+        {/*<MaterialCommunityIcons
           name="bell"
           size={32}
           color="#f4f4f4"
           onPress={notifications}
           style={{ alignSelf: 'center' }}
-        />
+        />*/}
       </View>
     </View>
   )
