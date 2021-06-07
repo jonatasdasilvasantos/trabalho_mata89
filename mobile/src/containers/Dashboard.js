@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 /* Icons */
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
-import { Button, Template, Avatar, CardMenuButton } from '../components'
+import { Button, Template, Avatar, CardMenuButton, Header } from '../components'
 
 function Dashboard() {
   const navigation = useNavigation()
@@ -13,7 +13,7 @@ function Dashboard() {
 
   return (
     <Template>
-      <Text style={styles.title}>Dashboard</Text>
+      <Header name="Dashboard" />
       <Avatar
         source={require('../../assets/Avatar.png')}
         name="Jônatas da Silva"
@@ -147,8 +147,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     flexDirection: 'row',
     alignItems: 'center',
-    //paddingHorizontal: '6.4%',
-    //paddingVertical: '3.2%',
     justifyContent: 'space-around',
     backgroundColor: '#925BFF',
     position: 'absolute',
@@ -166,7 +164,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#925BFF',
   },
   disable: {
-    //opacity: 0.6,
     alignItems: 'center',
     marginTop: '-3%',
     paddingHorizontal: '6.4%',
