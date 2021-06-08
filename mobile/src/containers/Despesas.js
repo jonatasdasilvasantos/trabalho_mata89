@@ -90,12 +90,13 @@ function Despesas() {
               alignItems: 'center',
             }}>
             <MaterialCommunityIcons
-              name="book-open-page-variant"
+              name="view-grid"
+              
               size={24}
               color="#fefefe"
               style={{ opacity: 0.7 }}
             />
-            <Text style={styles.route}>Receitas</Text>
+            <Text style={styles.route}>Dashboard</Text>
           </Pressable>
         </View>
         <View style={styles.disable}>
@@ -105,16 +106,16 @@ function Despesas() {
               alignItems: 'center',
             }}>
             <MaterialCommunityIcons
-              name="clipboard-pulse"
+              name="book-open-page-variant"
               size={24}
               color="#fefefe"
               style={{ opacity: 0.7 }}
             />
-            <Text style={styles.route}>Despesas</Text>
+            <Text style={styles.route}>Receitas</Text>
           </Pressable>
         </View>
         <View style={styles.selected}>
-          <MaterialCommunityIcons name="view-grid" size={28} color="#fefefe" />
+          <MaterialCommunityIcons name="clipboard-pulse" size={28} color="#fefefe" />
         </View>
         <View style={styles.disable}>
           <Pressable
@@ -170,6 +171,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#925BFF',
     position: 'absolute',
     marginBottom: '-3%',
+    borderTopColor: '#fefefe',
+    borderTopWidth: 1,
   },
   selected: {
     borderWidth: 3,
