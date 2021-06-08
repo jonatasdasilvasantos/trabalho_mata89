@@ -135,7 +135,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#925BFF',
     position: 'absolute',
     marginBottom: '-3%',
-    position: 'absolute'
+    position: 'absolute',
+    borderTopColor: '#fefefe',
+    borderTopWidth: 1,
   },
   selected: {
     borderWidth: 3,
