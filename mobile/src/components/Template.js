@@ -3,9 +3,14 @@ import { StatusBar } from 'expo-status-bar'
 import { StyleSheet } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
-function Template({ children }) {
+function Template({ children, cor }) {
   return (
-    <ScrollView style={styles} contentContainerStyle={styles.container}>
+    <ScrollView
+      style={styles}
+      contentContainerStyle={[
+        styles.container,
+        cor ? { backgroundColor: cor } : { backgroundColor: '#fff' },
+      ]}>
       <StatusBar style="auto" />
       {children}
     </ScrollView>
@@ -17,7 +22,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     paddingVertical: 30,
     marginHorizontal: 0,
-    backgroundColor: '#fff',
     alignItems: 'center',
   },
   extenal: {

@@ -1,3 +1,9 @@
+// Variables
+logins = [{
+    login: 'jonatas',
+    password: 'jesus',
+}];
+
 // Routes
 module.exports = function (app) {
     app.get('/main', (request, response) => {
@@ -17,14 +23,38 @@ module.exports = function (app) {
     });
 
     app.post('/login', (request, response) => {
-        const { name, pass } = request.body;
-        console.log("User: " + name + ", password: " + pass);
-        return response.status(204).json({ message: "login started!", name: name, password: pass });
+        const { login, password } = request.body;
+        let flag = false;
+
+        for (user of logins) {
+            if (user.login == login && user.password == password) {
+                return response.status(200).json({ message: 'Sejá bem vindo!' });
+            } else {
+                flag = true;
+            }
+        }
+
+        if (flag)
+            return response.status(400).json({ message: 'Usuário não cadastrado, ou dados incorretos!' });
     });
 
     app.post('/cadastro', (request, response) => {
-        const { login, password, universidade, type } = request.body;
-        return response.status(201).json({ message: "cadastro started!", login: login, password: password, universidade: universidade, type: type });
+        const { login, password } = request.body;
+
+        let flag = false;
+        
+        for (user of logins) {
+            if (user.login == login) {
+                return response.status(400).json({ message: 'Usuário já cadastrado!' });
+            } else {
+                flag = true;
+            }
+        }
+
+        if (flag) {
+            logins = [...logins, request.body];
+            return response.status(201).json({ message: "cadastro realizado!", login: login });
+        }
     });
 
     app.put('/restore', (request, response) => {

@@ -1,109 +1,142 @@
-import React from 'react';
-import { LinearGradient } from 'expo-linear-gradient';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import React from 'react'
+import { LinearGradient } from 'expo-linear-gradient'
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Button, Template, Avatar, Header } from '../components'
 
-import { Button, Template } from '../components';
+/* Icons */
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 function Parcerias() {
-    const navigation = useNavigation();
-    const changePage = (page) => () => navigation.navigate(page);
+  const navigation = useNavigation()
+  const changePage = (page) => () => navigation.navigate(page)
 
-    return (
-        <Template>
-            <Text>Parcerias</Text>
-        </Template>
-    )
+  return (
+    <Template>
+      <Header name="Parcerias" />
+      <Avatar
+        source={require('../../assets/Avatar.png')}
+        name="Jônatas da Silva"
+      />
+      <View style={{ height: '39%' }}>
+        <View style={{ backgroundColor: '#F47318', paddingBottom: '25%', paddingHorizontal: '4%' }}>
+          <Text style={{ color: '#fefefe', fontFamily: 'Ubuntu_700Bold', fontSize: 32, paddingVertical: '4%' }}>Seja um parceiro!</Text>
+          <Text style={{ color: '#fefefe', opacity: 0.8, fontSize: 20, fontFamily: 'OpenSans_600SemiBold'}}>Ajude a sua Universidade a continuar progredindo no desenvolvimento científico do país!</Text>
+        </View>
+        <Pressable style={{ paddingHorizontal: '10%', paddingVertical: '6%', backgroundColor: '#09816C', width: '50%', alignSelf: 'center', borderRadius: 14, marginTop: '-9%', zIndex: 10}}>
+          <Text style={{ color: '#fefefe', fontSize: 18, fontFamily: 'Ubuntu_700Bold'}}>Fazer doação</Text>
+        </Pressable>
+      </View>
+      <View style={{ backgroundColor: '#F3A150', paddingBottom: '25%', paddingHorizontal: '4%', paddingVertical: '15%', height: '48%', marginTop: '-12%', marginBottom: '-20%' }}>
+        <Text style={{ color: '#fff', fontFamily: 'OpenSans_600SemiBold', fontSize: 20, paddingVertical: '4%' }}>Até aqui universidade já foi ajudada por mais de 1.000 parceiros, e já obteve uma soma de aproximadamente:</Text>
+        <Text style={{ fontFamily: 'ChakraPetch_700Bold', fontSize: 40, textAlign: 'center', color: '#fff', marginTop: '10%' }}>R$ 1.000.000,00</Text>
+      </View>
+      {/* Menu */}
+      <View style={styles.bar}>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Dashboard')}
+            style={{
+              alignItems: 'center',
+            }}>
+            <MaterialCommunityIcons
+              name="view-grid"
+              size={24}
+              color="#fefefe"
+              style={{ opacity: 0.7 }}
+            />
+            <Text style={styles.route}>Dashboard</Text>
+          </Pressable>
+        </View>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Receitas')}
+            style={{
+              alignItems: 'center',
+            }}>
+            <MaterialCommunityIcons
+              name="book-open-page-variant"
+              size={24}
+              color="#fefefe"
+              style={{ opacity: 0.7 }}
+            />
+            <Text style={styles.route}>Receitas</Text>
+          </Pressable>
+        </View>
+        <View style={styles.selected}>
+          <MaterialCommunityIcons name="handshake" size={28} color="#fefefe" />
+        </View>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Despesas')}
+            style={{
+              alignItems: 'center',
+            }}>
+            <MaterialCommunityIcons
+              name="clipboard-pulse"
+              size={24}
+              color="#fefefe"
+              style={{ opacity: 0.7 }}
+            />
+            <Text style={styles.route}>Despesas</Text>
+          </Pressable>
+        </View>
+        <View style={styles.disable}>
+          <Pressable
+            onPress={changePage('Projetos')}
+            style={{
+              alignItems: 'center',
+            }}>
+            <MaterialCommunityIcons
+              name="head-lightbulb"
+              size={24}
+              color="#fefefe"
+              style={{ opacity: 0.7 }}
+            />
+            <Text style={styles.route}>Projetos</Text>
+          </Pressable>
+        </View>
+      </View>
+    </Template>
+  )
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingVertical: 30,
-        marginHorizontal: 0,
-        flexDirection: 'column',
-        backgroundColor: '#fff',
-        alignItems: 'center',
-    },
-    text1: {
-        opacity: 0.4,
-        fontSize: 14,
-        fontFamily: 'Ubuntu_500Medium',
-        textAlign: 'center',
-        paddingHorizontal: '24%',
-        paddingVertical: '4%',
-    },
-    slide: {
-        width: '100%',
-        height: '56.65%',
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginHorizontal: 0,
-        justifyContent: 'space-around',
-    },
-    card: {
-        width: '37.31%',
-        height: '81.95%',
-        borderRadius: 24,
-        marginHorizontal: -195,
-        backgroundColor: '#35BCA4',
-    },
-    cardPrincipal: {
-        width: 150,
-        height: 300,
-        // paddingHorizontal: 24,
-        // paddingVertical: 32,
-        borderRadius: 24,
-        textAlign: 'center',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: '#925BFF',
-    },
-    cardText: {
-        color: '#FAFAFA',
-        marginVertical: 8,
-        textAlign: 'center',
-    },
-    arrowRight: {
-        top: '50%',
-        marginHorizontal: 16,
-    },
-    arrowLeft: {
-        top: '50%',
-        right: -92,
-        marginHorizontal: 16,
-    },
-    detalhes: {
-        color: '#979797',
-        textAlign: 'center',
-        marginHorizontal: 64,
-        marginVertical: 20,
-    },
-    buttons: {
-        //width: '100%',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-        //   marginHorizontal: '12%',
-    },
-    buttonLogIn: {
-        color: '#FFFFFF',
-        fontWeight: 'bold',
-        fontSize: 16,
-        lineHeight: 18,
-        backgroundColor: '#925BFF',
-        paddingVertical: 24,
-        paddingHorizontal: 32,
-        borderRadius: 24,
-        shadowColor: '#925BFF',
-        elevation: 5,
-    },
-    buttonCadastrar: {
-        color: '#925BFF',
-        fontWeight: 'bold',
-        lineHeight: 18,
-        fontSize: 16,
-    },
-})
+  view: {
+    backgroundColor: '#fefefe',
+  },
+  bar: {
+    width: '100%',
+    bottom: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    backgroundColor: '#925BFF',
+    position: 'absolute',
+    marginBottom: '-3%',
+  },
+  selected: {
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: '#fff',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    top: '-8%',
+    padding: '4%',
+    backgroundColor: '#925BFF',
+  },
+  disable: {
+    alignItems: 'center',
+    marginTop: '-3%',
+    paddingHorizontal: '6.4%',
+  },
+  route: {
+    fontSize: 10,
+    color: '#fff',
+    opacity: 1,
+    fontFamily: 'OpenSans_600SemiBold',
+  },
+});
 
-export default Parcerias;
+export default Parcerias
