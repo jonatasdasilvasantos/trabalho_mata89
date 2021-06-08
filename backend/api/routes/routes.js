@@ -23,8 +23,26 @@ module.exports = function (app) {
     });
 
     app.post('/cadastro', (request, response) => {
-        const { login, password, universidade, type } = request.body;
-        return response.status(201).json({ message: "cadastro started!", login: login, password: password, universidade: universidade, type: type });
+        const { login, password, university, student } = request.body;
+        let db = app.get('database');
+        let stmt = db.prepare("INSERT INTO users (login, password, university, student) VALUES (?,?,?,?)");
+        stmt.run(login, password, university, student);
+        stmt.finalize();
+        return response.status(201).json({ message: "cadastro started!", login: login, password: password, universidade: university, student: student });
+    
+        /*
+            {
+                "nome": "jonatassilva",
+                "password": "jesus",
+                "university": "UFBA",
+                "student": true
+            }
+
+            process.on('SIGINT', () => {
+                db.close();
+                server.close();
+            });
+        */
     });
 
     app.put('/restore', (request, response) => {
