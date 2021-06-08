@@ -18,7 +18,7 @@ function Login() {
       let { status } = await api.post('/login', { login: user, password: pass })
 
       if (status === 200) {
-        navigation.navigate('Dashboard')
+        navigation.navigate('Dashboard', { user })
       }
     } catch (error) {
       Alert.alert('Falha no Login, tente novamente')
