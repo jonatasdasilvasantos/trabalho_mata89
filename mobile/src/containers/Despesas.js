@@ -10,6 +10,15 @@ import { Button, Template, Avatar, CardMenuButton, Header } from '../components'
 function Despesas() {
   const navigation = useNavigation()
   const changePage = (page) => () => navigation.navigate(page)
+  let despesas = [
+    { nome: 'Despesas', valor: 'R$ 1.000.000.000,00' },
+    { nome: 'Agua', valor: 'R$ 15.000.000,00' },
+    { nome: 'Luz', valor: 'R$ 21.000.000,00' },
+    { nome: 'Salários', valor: 'R$ 301.000.000.000,00' },
+    { nome: 'Infra Estrutura', valor: 'R$ 7.000.000.000,00' },
+    { nome: 'Tecnologia', valor: 'R$ 8.000.000.000,00' },
+    { nome: 'Subsidios', valor: 'R$ 1.000.000,00' },
+  ]
 
   return (
     <Template>
@@ -48,7 +57,7 @@ function Despesas() {
           borderBottomRightRadius: 28,
           borderBottomLeftRadius: 28,
         }}>
-        {[0, 1, 2, 3, 4, 5, 6].map((itens) => (
+        {despesas.map((obj, itens) => (
           <View
             style={{
               width: 315,
@@ -67,7 +76,7 @@ function Despesas() {
                 color: '#fff',
                 fontSize: 16,
               }}>
-              Energia eletrica
+              {obj.nome}
             </Text>
             <Text
               style={{
@@ -75,7 +84,7 @@ function Despesas() {
                 color: '#fff',
                 fontSize: 16,
               }}>
-              R$ 35.000,00
+              {obj.valor}
             </Text>
           </View>
         ))}
