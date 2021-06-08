@@ -1,7 +1,7 @@
-const md5 = require('md5');
+//const md5 = require('md5');
 const express = require('express');
 //const config = require('./config/confing');
-const sqlite3 = require('sqlite3').verbose();
+//const sqlite3 = require('sqlite3').verbose();
 const { request, response } = require('express');
 //const datasource = require('./config/datasource');
 
@@ -11,7 +11,7 @@ app.set('port', 8546);
 app.use(express.json());
 
 // BaseData
-var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE,
+/*var db = new sqlite3.Database('database.db', sqlite3.OPEN_READWRITE,
     (err) => {
         if (err) {
             console.error(err.message);
@@ -27,10 +27,10 @@ db.serialize(() => {
     db.run("CREATE TABLE if not exists despesas (nome TEXT, valor TEXT, university TEXT)");
     db.run("CREATE TABLE if not exists parcerias (nome TEXT, valor TEXT, university TEXT)");
     db.run("CREATE TABLE if not exists projetos (nome TEXT, valor TEXT, university TEXT)");
-});
+});*/
 
 process.on('SIGINT', () => {
-    db.close();
+    //db.close();
     server.close();
 });
 
