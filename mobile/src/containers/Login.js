@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, Alert } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Octicons } from '@expo/vector-icons'
 import { MaterialIcons } from '@expo/vector-icons'
-import api from '../services'
 
+import api from '../services'
 import { Button, Template } from '../components'
 
 function Login() {
@@ -13,7 +13,18 @@ function Login() {
   const [user, setUser] = useState('')
   const [pass, setPassword] = useState('')
 
-  const login = () => api.post('/login', { login: user, password: pass })
+  const login = async () => {
+    try {
+      let { status } = await api.post('/login', { login: user, password: pass })
+
+      if (status === 200) {
+        navigation.navigate('Dashboard')
+      }
+    } catch (error) {
+      Alert.alert('Falha no Login, tente novamente')
+      console.log(error)
+    }
+  }
 
   return (
     <Template>
@@ -56,7 +67,7 @@ function Login() {
           titulo="Esqueceu sua senha?"
           onPress={changePage('Password')}
         />
-        <Button titulo="Entrar" onPress={changePage('Dashboard')} />
+        <Button titulo="Entrar" onPress={login} />
       </View>
     </Template>
   )
