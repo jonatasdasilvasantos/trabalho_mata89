@@ -1,3 +1,9 @@
+// Variables
+logins = [{
+    login: 'jonatas',
+    password: 'jesus',
+}];
+
 // Routes
 module.exports = function (app) {
     app.get('/main', (request, response) => {
@@ -23,26 +29,22 @@ module.exports = function (app) {
     });
 
     app.post('/cadastro', (request, response) => {
-        const { login, password, university, student } = request.body;
-        let db = app.get('database');
-        let stmt = db.prepare("INSERT INTO users (login, password, university, student) VALUES (?,?,?,?)");
-        stmt.run(login, password, university, student);
-        stmt.finalize();
-        return response.status(201).json({ message: "cadastro started!", login: login, password: password, universidade: university, student: student });
-    
-        /*
-            {
-                "nome": "jonatassilva",
-                "password": "jesus",
-                "university": "UFBA",
-                "student": true
-            }
+        const { login, password } = request.body;
 
-            process.on('SIGINT', () => {
-                db.close();
-                server.close();
-            });
-        */
+        let flag = false;
+        
+        for (user of logins) {
+            if (user.login == login) {
+                return response.json({ message: 'Usuário já cadastrado!' });
+            } else {
+                flag = true;
+            }
+        }
+
+        if (flag) {
+            logins = [...logins, request.body];
+            return response.status(201).json({ message: "cadastro realizado!", login: login });
+        }
     });
 
     app.put('/restore', (request, response) => {
