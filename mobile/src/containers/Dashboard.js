@@ -7,16 +7,22 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import { Button, Template, Avatar, CardMenuButton, Header } from '../components'
 
-function Dashboard() {
+function Dashboard(props) {
   const navigation = useNavigation()
   const changePage = (page) => () => navigation.navigate(page)
+
+  React.useEffect(() => {
+    console.log(props.route.params)
+  }, [])
 
   return (
     <Template>
       <Header name="Dashboard" />
       <Avatar
         source={require('../../assets/Avatar.png')}
-        name="Jônatas da Silva"
+        name={
+          props.route.params.user ? props.route.params.user : 'Jônatas da Silva'
+        }
       />
 
       <View style={styles.block}>
