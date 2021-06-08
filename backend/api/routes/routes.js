@@ -23,9 +23,19 @@ module.exports = function (app) {
     });
 
     app.post('/login', (request, response) => {
-        const { name, pass } = request.body;
-        console.log("User: " + name + ", password: " + pass);
-        return response.status(204).json({ message: "login started!", name: name, password: pass });
+        const { login, password } = request.body;
+        let flag = false;
+
+        for (user of logins) {
+            if (user.login == login && user.password == password) {
+                return response.status(200).json({ message: 'Sejá bem vindo!' });
+            } else {
+                flag = true;
+            }
+        }
+
+        if (flag)
+            return response.status(400).json({ message: 'Usuário não cadastrado, ou dados incorretos!' });
     });
 
     app.post('/cadastro', (request, response) => {
@@ -35,7 +45,7 @@ module.exports = function (app) {
         
         for (user of logins) {
             if (user.login == login) {
-                return response.json({ message: 'Usuário já cadastrado!' });
+                return response.status(400).json({ message: 'Usuário já cadastrado!' });
             } else {
                 flag = true;
             }
