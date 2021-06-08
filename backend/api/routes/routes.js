@@ -1,7 +1,7 @@
 // Variables
 logins = [{
     login: 'jonatas',
-    password: 'jesus',
+    password: '12345',
 }];
 
 // Routes
