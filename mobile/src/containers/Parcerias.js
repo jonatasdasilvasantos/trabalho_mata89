@@ -18,7 +18,7 @@ function Parcerias() {
         source={require('../../assets/Avatar.png')}
         name="Jônatas da Silva"
       />
-      <View style={{ height: '39%' }}>
+      <View style={{ height: '39%', marginTop: '2%', }}>
         <View style={{ backgroundColor: '#F47318', paddingBottom: '25%', paddingHorizontal: '4%' }}>
           <Text style={{ color: '#fefefe', fontFamily: 'Ubuntu_700Bold', fontSize: 32, paddingVertical: '4%' }}>Seja um parceiro!</Text>
           <Text style={{ color: '#fefefe', opacity: 0.8, fontSize: 20, fontFamily: 'OpenSans_600SemiBold'}}>Ajude a sua Universidade a continuar progredindo no desenvolvimento científico do país!</Text>
@@ -28,8 +28,8 @@ function Parcerias() {
         </Pressable>
       </View>
       <View style={{ backgroundColor: '#F3A150', paddingBottom: '25%', paddingHorizontal: '4%', paddingVertical: '15%', height: '48%', marginTop: '-12%', marginBottom: '-20%' }}>
-        <Text style={{ color: '#fff', fontFamily: 'OpenSans_600SemiBold', fontSize: 20, paddingVertical: '4%' }}>Até aqui universidade já foi ajudada por mais de 1.000 parceiros, e já obteve uma soma de aproximadamente:</Text>
-        <Text style={{ fontFamily: 'ChakraPetch_700Bold', fontSize: 40, textAlign: 'center', color: '#fff', marginTop: '10%' }}>R$ 1.000.000,00</Text>
+        <Text style={{ color: '#121212', fontFamily: 'OpenSans_600SemiBold', fontSize: 20, paddingVertical: '3%', textAlign: 'center' }}>Até aqui universidade já foi ajudada por mais de 1.000 parceiros, e já obteve uma soma de aproximadamente:</Text>
+        <Text style={{ fontFamily: 'ChakraPetch_700Bold', fontSize: 44, textAlign: 'center', color: '#121212', marginTop: '5%' }}>R$ 1.000.000,00</Text>
       </View>
       {/* Menu */}
       <View style={styles.bar}>
@@ -114,6 +114,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#925BFF',
     position: 'absolute',
     marginBottom: '-3%',
+    borderTopColor: '#fefefe',
+    borderTopWidth: 1,
   },
   selected: {
     borderWidth: 3,

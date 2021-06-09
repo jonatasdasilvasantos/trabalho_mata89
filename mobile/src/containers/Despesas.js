@@ -11,12 +11,12 @@ function Despesas() {
   const navigation = useNavigation()
   const changePage = (page) => () => navigation.navigate(page)
   let despesas = [
-    { nome: 'Despesas', valor: 'R$ 1.000.000.000,00' },
-    { nome: 'Agua', valor: 'R$ 15.000.000,00' },
-    { nome: 'Luz', valor: 'R$ 21.000.000,00' },
-    { nome: 'Salários', valor: 'R$ 301.000.000.000,00' },
-    { nome: 'Infra Estrutura', valor: 'R$ 7.000.000.000,00' },
-    { nome: 'Tecnologia', valor: 'R$ 8.000.000.000,00' },
+    { nome: 'Despesas', valor: 'R$ 1.000.000,00' },
+    { nome: 'Agua', valor: 'R$ 5.000.000,00' },
+    { nome: 'Luz', valor: 'R$ 10.000.000,00' },
+    { nome: 'Salários', valor: 'R$ 5.000.000,00' },
+    { nome: 'Infra Estrutura', valor: 'R$ 2.000.000,00' },
+    { nome: 'Tecnologia', valor: 'R$ 8.000.000,00' },
     { nome: 'Subsidios', valor: 'R$ 1.000.000,00' },
   ]
 
@@ -41,11 +41,11 @@ function Despesas() {
           borderRadius: 6,
         }}>
         <Text
-          style={{ fontFamily: 'Ubuntu_700Bold', color: '#fff', fontSize: 16 }}>
+          style={{ fontFamily: 'Ubuntu_700Bold', color: '#fff', fontSize: 16, textAlign: 'left' }}>
           Destino
         </Text>
         <Text
-          style={{ fontFamily: 'Ubuntu_700Bold', color: '#fff', fontSize: 16 }}>
+          style={{ fontFamily: 'Ubuntu_700Bold', color: '#fff', fontSize: 16, textAlign: 'right' }}>
           Valor
         </Text>
       </View>
@@ -75,6 +75,7 @@ function Despesas() {
                 fontFamily: 'Ubuntu_700Bold',
                 color: '#fff',
                 fontSize: 16,
+                textAlign: 'left',
               }}>
               {obj.nome}
             </Text>
@@ -83,6 +84,7 @@ function Despesas() {
                 fontFamily: 'Ubuntu_700Bold',
                 color: '#fff',
                 fontSize: 16,
+                textAlign: 'right'
               }}>
               {obj.valor}
             </Text>
@@ -99,12 +101,13 @@ function Despesas() {
               alignItems: 'center',
             }}>
             <MaterialCommunityIcons
-              name="book-open-page-variant"
+              name="view-grid"
+              
               size={24}
               color="#fefefe"
               style={{ opacity: 0.7 }}
             />
-            <Text style={styles.route}>Receitas</Text>
+            <Text style={styles.route}>Dashboard</Text>
           </Pressable>
         </View>
         <View style={styles.disable}>
@@ -114,16 +117,16 @@ function Despesas() {
               alignItems: 'center',
             }}>
             <MaterialCommunityIcons
-              name="clipboard-pulse"
+              name="book-open-page-variant"
               size={24}
               color="#fefefe"
               style={{ opacity: 0.7 }}
             />
-            <Text style={styles.route}>Despesas</Text>
+            <Text style={styles.route}>Receitas</Text>
           </Pressable>
         </View>
         <View style={styles.selected}>
-          <MaterialCommunityIcons name="view-grid" size={28} color="#fefefe" />
+          <MaterialCommunityIcons name="clipboard-pulse" size={28} color="#fefefe" />
         </View>
         <View style={styles.disable}>
           <Pressable
@@ -179,6 +182,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#925BFF',
     position: 'absolute',
     marginBottom: '-3%',
+    borderTopColor: '#fefefe',
+    borderTopWidth: 1,
   },
   selected: {
     borderWidth: 3,

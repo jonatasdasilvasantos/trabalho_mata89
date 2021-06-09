@@ -39,7 +39,7 @@ function Projetos() {
         <View style={styles.value}>
           <Text style={styles.valueTitle}>A universidade é apoiada com:</Text>
           <Text style={styles.valueValue}>R$ 8.000.000,00</Text>
-          <Text style={styles.valuePro}>Provindo de projetos acadêmicos</Text>
+          <Text style={styles.valuePro}>Provindos de projetos acadêmicos</Text>
         </View>
         <Pressable style={styles.button}><Text style={styles.buttonText}>Conheça outros projetos</Text></Pressable>
       </View>
